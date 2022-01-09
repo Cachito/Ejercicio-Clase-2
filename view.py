@@ -11,7 +11,7 @@ from tkinter import Button
 from tkinter import Radiobutton
 from tkinter import ttk
 from clases import Temas
-from model import Model
+from model_pw import ModelPw
 
 class View:
     """
@@ -26,7 +26,7 @@ class View:
         self.opcion = StringVar()
         self.frame = Frame(self.root)
         self.tree = ttk.Treeview(self.frame)
-        self.model = Model()
+        self.model = ModelPw()
 
         # Frame
         self.root.title("Tarea Poo")
@@ -126,13 +126,15 @@ class View:
         self.btn_rojo.grid(column=2, row=23)
 
         # Tree
-        self.tree["columns"] = ("col1", "col2")
+        self.tree["columns"] = ("titulo", "descripcion", "noticia")
         self.tree.column("#0", width=90, minwidth=50, anchor="w")
-        self.tree.column("col1", width=200, minwidth=80)
-        self.tree.column("col2", width=200, minwidth=80)
+        self.tree.column("titulo", width=200, minwidth=80)
+        self.tree.column("descripcion", width=200, minwidth=80)
+        self.tree.column("noticia", width=200, minwidth=80)
         self.tree.heading("#0", text="ID")
-        self.tree.heading("col1", text="Título")
-        self.tree.heading("col2", text="Descripción")
+        self.tree.heading("titulo", text="Título")
+        self.tree.heading("descripcion", text="Descripción")
+        self.tree.heading("noticia", text="Noticia")
         self.tree.grid(row=10, column=0, columnspan=4)
 
     def alta(

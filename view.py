@@ -3,7 +3,6 @@ view.py
 clase View del patrón VMC
 """
 from tkinter import StringVar
-from tkinter import IntVar
 from tkinter import Frame
 from tkinter import Entry
 from tkinter import Label
@@ -22,7 +21,6 @@ class View:
         self.root = window
         self.titulo = StringVar()
         self.descripcion = StringVar()
-        #self.a = IntVar()
         self.opcion = StringVar()
         self.frame = Frame(self.root)
         self.tree = ttk.Treeview(self.frame)
